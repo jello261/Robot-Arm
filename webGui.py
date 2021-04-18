@@ -22,19 +22,19 @@ def index():
         phi = request.form['phi']
 
         try:
-            robot.baseMover(base)
+            robot.baseMover(int(base))
         except:
             try:
-                robot.xarmMover(first)
+                robot.xarmMover(int(first))
             except:
                 try:
-                    robot.sxarmMover(second)
+                    robot.sxarmMover(int(second))
                 except:
                     try:
-                        robot.txarmMover(third)
+                        robot.txarmMover(int(third))
                     except:
                         try:
-                            robot.inverseKiematics(x, y, phi)
+                            robot.inverseKiematics(int(x), int(y), int(phi))
                         except:
                             print("fuck it")
 
