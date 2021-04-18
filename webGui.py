@@ -3,7 +3,7 @@ from flask import render_template
 from flask import request
 from robotArm import RobotArm
 
-#robot = RobotArm()
+robot = RobotArm()
 
 app = Flask(__name__)
 
@@ -21,11 +21,11 @@ def index():
         y = request.form['y']
         phi = request.form['phi']
 
-        # robot.baseMover(base)
-        # robot.xarmMover(first)
-        # robot.sxarmMover(second)
-        # robot.txarmMover(third)
-        # robot.inverseKiematics(x, y, phi)
+        robot.baseMover(base)
+        robot.xarmMover(first)
+        robot.sxarmMover(second)
+        robot.txarmMover(third)
+        robot.inverseKiematics(x, y, phi)
     
     
     return render_template('GUI.html')
