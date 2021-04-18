@@ -21,17 +21,25 @@ def index():
         y = request.form['y']
         phi = request.form['phi']
 
-        robot.baseMover(base)
-        robot.xarmMover(first)
-        robot.sxarmMover(second)
-        robot.txarmMover(third)
-        robot.inverseKiematics(x, y, phi)
-    
+        try:
+            robot.baseMover(base)
+        except:
+            try:
+                robot.xarmMover(first)
+            except:
+                try:
+                    robot.sxarmMover(second)
+                except:
+                    try:
+                        robot.txarmMover(third)
+                    except:
+                        try:
+                            robot.inverseKiematics(x, y, phi)
+                        except:
+                            print("fuck it")
+
     
     return render_template('GUI.html')
-
-
-
 
 if __name__ == '__main__':
     app.run(host='192.168.1.224', port=5000)
