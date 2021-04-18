@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control Board</title>
+        <link rel="stylesheet" href= "{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="Titlebar">
+            <h2>Jellyclouds Arm</h2>
+        </div>
+        <br>
+        <br>
+        <div id="main">
+            <form action="{{ url_for("index")}}" method="post">
+                <table>
+                    <tr>
+                        <th>Base</th>
+                        <th>First Joint</th>
+                        <th>Second Joint</th>
+                        <th>Third Joint</th>
+                        <th>Claw</th>
+                    </tr>
+                    <tr>
+                        <td><input type="input" name="base"></td>
+                        <td><input type="input" name="first"></td>
+                        <td><input type="input" name="second"></td>
+                        <td><input type="input" name="third"></td>
+                        <td><input type="input" name="claw"></td>
+                        <td>All inputs must be in degress from 0 to 180</td>
+                    </tr>
+                    
+                </table>
+                    <br>
+                    <br>
+                    <br>
+                <table>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Phi</th>
+                    </tr>
+                    <tr>
+                        <td><input type="input" name="X"></td>
+                        <td><input type="input" name="Y"></td>
+                        <td><input type="input" name="Phi"></td>
+                        <td>Set your X coordinate and Y coordinate points, Phi is an angle of degree for the postion of the final arm.</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="footer">
+
+        </div>
+    </body>
+</html>
