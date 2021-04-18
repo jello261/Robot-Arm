@@ -7,7 +7,6 @@ class RobotArm():
     def __init__(self):
         self.pwm = Adafruit_PCA9685.PCA9685()
         self.pwm.set_pwm_freq(60)
-
         self.speed = .0005
         self.setcheck(False)
 
@@ -22,7 +21,7 @@ class RobotArm():
     def baseMover(self, input):
         if self.check():
             #Thanks Josh for helping calculate the degrees
-            x = int(2.888888889 * input + 130)
+            x = int(2.888888889 * int(input) + 130)
             y = self.get_basePos()
             if x < self.get_basePos():
                 for a in range(x, self.get_basePos()):
