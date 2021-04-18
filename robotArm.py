@@ -1,7 +1,7 @@
 import time
 import math
 import Adafruit_PCA9685
-#from adafruit_servokit import ServoKit
+from adafruit_servokit import ServoKit
 
 class RobotArm():
     def __init__(self):
@@ -12,11 +12,11 @@ class RobotArm():
         self.setcheck(False)
 
     def openClaw(self):
-        print(f"open {self.clawMin}")
+        print("open")
         self.pwm.set_pwm(3,0,self.clawMin)
 
     def closeClaw(self):
-        print(f"close {self.clawMax}")
+        print("close")
         self.pwm.set_pwm(3,0,self.clawMax)
         
     def baseMover(self, input):
