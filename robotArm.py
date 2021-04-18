@@ -21,7 +21,7 @@ class RobotArm():
     def baseMover(self, input):
         if self.check():
             #Thanks Josh for helping calculate the degrees
-            x = int(2.888888889 * int(input) + 130)
+            x = int(2.888888889 * int(input.get()) + 130)
             y = self.get_basePos()
             if x < self.get_basePos():
                 for a in range(x, self.get_basePos()):
