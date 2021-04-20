@@ -17,16 +17,16 @@ def display(window):
     clawClose = tk.Button(text="Close Claw", command=lambda :robotArm.closeClaw())
 
     #entry and labels for the base and arms
-    baseLabel = tk.Label(text="Base rotaion 0-90")
+    baseLabel = tk.Label(text="Base rotaion 0-180")
     base = tk.Entry(width=10)
 
-    xarmLabel = tk.Label(text="First Arm 0-90")
+    xarmLabel = tk.Label(text="First Arm 0-180")
     xarm = tk.Entry(width=10)
 
-    sxarmLabel = tk.Label(text="Second Arm 0-90")
+    sxarmLabel = tk.Label(text="Second Arm 0-180")
     sxarm = tk.Entry(width=10)
 
-    txarmLabel = tk.Label(text="Thrid Arm 0-90")
+    txarmLabel = tk.Label(text="Thrid Arm 0-180")
     txarm = tk.Entry(width=10)
 
     xLabel = tk.Label(text="X Point")
@@ -72,7 +72,7 @@ def display(window):
     y.grid(row=5, column=1)
     phi.grid(row=5, column=2)
 
-    moveKin.grid(row=6, column=0)
+    moveKin.grid(row=5, column=3)
 
     homeButton.grid(row=7, column=0)
     #aps3conButton.grid(row=4, column=1)
