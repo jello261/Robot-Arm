@@ -147,8 +147,8 @@ class RobotArm():
         a3 = 13.3698
 
         # Desired Position of End effector
-        px = x
-        py = y
+        px = int(x.get())
+        py = int(y.get())
 
         phi = int(phiangle.get())
         phi = math.radians(phi)
