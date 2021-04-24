@@ -150,7 +150,7 @@ class RobotArm():
         px = x
         py = y
 
-        phi = phiangle
+        phi = int(phiangle.get())
         phi = math.radians(phi)
 
         # Equations for Inverse kinematics
