@@ -4,11 +4,12 @@ from robotArm import RobotArm
 
 def main():
     window = tk.Tk()
-    display(window)
+    robotArm = RobotArm()
+    display(window, robotArm)
     
 
-def display(window):
-    robotArm = RobotArm()
+def display(window, robotArm):
+    
     homeButton = tk.Button(text="Home", command=lambda :robotArm.home())
     #ps3conButton = tk.Button(text="PS3 Controller", command=lambda :self.PS3(True))
 
@@ -42,7 +43,7 @@ def display(window):
     moveBase = tk.Button(text="Move Base", command=lambda :robotArm.baseMover(base))
     moveXarm = tk.Button(text="Move First Arm", command=lambda :robotArm.xarmMover(xarm))
     moveSXarm = tk.Button(text="Move Second Arm", command=lambda :robotArm.sxarmMover(sxarm))
-    moveTXarm = tk.Button(text="Move Thrid Arm", command=lambda :robotArm.txarmMover(sxarm))
+    moveTXarm = tk.Button(text="Move Thrid Arm", command=lambda :robotArm.txarmMover(txarm))
     moveKin = tk.Button(text="Move arm to X, Y Potions", command=lambda :robotArm.inverseKiematics(x, y, phi))
 
     #display Buttons and entry's
