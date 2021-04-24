@@ -26,11 +26,11 @@ class RobotArm():
             if x < self.get_basePos():
                 for a in range(x, self.get_basePos()):
                     y -= 1
-                    self.pwm.set_pwm(4,0,(y))
+                    self.pwm.set_pwm(8,0,(y))
                     time.sleep(self.speed)
             else:
                 for a in range(self.get_basePos(), x):
-                    self.pwm.set_pwm(4,0,(a + 1))
+                    self.pwm.set_pwm(8,0,(a + 1))
                     time.sleep(self.speed)
             self.set_basePos(x)
         else:
@@ -53,15 +53,15 @@ class RobotArm():
                 for i in range(xone, xMove):
                     xtwo -= 1
                     xone += 1
-                    self.pwm.set_pwm(5,0,xone)
-                    self.pwm.set_pwm(6,0,xtwo)
+                    self.pwm.set_pwm(4,0,xone)
+                    self.pwm.set_pwm(9,0,xtwo)
                     time.sleep(self.speed)
             else:
                 for i in range( xMove , xone):
                     xtwo += 1
                     xone -= 1
-                    self.pwm.set_pwm(5,0,xone)
-                    self.pwm.set_pwm(6,0,xtwo)
+                    self.pwm.set_pwm(4,0,xone)
+                    self.pwm.set_pwm(9,0,xtwo)
                     time.sleep(self.speed)
             
             self.set_xangle(angle)
@@ -87,15 +87,15 @@ class RobotArm():
                 for i in range(xone, xMove):
                     xtwo -= 1
                     xone += 1
-                    self.pwm.set_pwm(7,0,xone)
-                    self.pwm.set_pwm(8,0,xtwo)
+                    self.pwm.set_pwm(5,0,xone)
+                    self.pwm.set_pwm(10,0,xtwo)
                     time.sleep(self.speed)
             else:
                 for i in range( xMove , xone):
                     xtwo += 1
                     xone -= 1
-                    self.pwm.set_pwm(7,0,xone)
-                    self.pwm.set_pwm(8,0,xtwo)
+                    self.pwm.set_pwm(5,0,xone)
+                    self.pwm.set_pwm(10,0,xtwo)
                     time.sleep(self.speed)
 
             self.set_sxangle(angle)
@@ -122,15 +122,15 @@ class RobotArm():
                 for i in range(xone, xMove):
                     xtwo -= 1
                     xone += 1
-                    self.pwm.set_pwm(9,0,xone)
-                    self.pwm.set_pwm(10,0,xtwo)
+                    self.pwm.set_pwm(6,0,xone)
+                    self.pwm.set_pwm(11,0,xtwo)
                     time.sleep(self.speed)
             else:
                 for i in range( xMove , xone):
                     xtwo += 1
                     xone -= 1
-                    self.pwm.set_pwm(9,0,xone)
-                    self.pwm.set_pwm(10,0,xtwo)
+                    self.pwm.set_pwm(6,0,xone)
+                    self.pwm.set_pwm(11,0,xtwo)
                     time.sleep(self.speed)
 
             self.set_txangle(angle)
@@ -176,21 +176,21 @@ class RobotArm():
 
     #homeing method
     def home(self):
-        #4 is base
-        self.pwm.set_pwm(4,0,130)
-        #5 & 6 is first arm
-        self.pwm.set_pwm(5,0,390)
-        self.pwm.set_pwm(6,0,390)
-        #7 & 8 is second arm
-        self.pwm.set_pwm(7,0,390)
-        self.pwm.set_pwm(8,0,390)
-        #9 & 10 is third arm
+        #base
+        self.pwm.set_pwm(8,0,130)
+        #first arm
+        self.pwm.set_pwm(4,0,390)
         self.pwm.set_pwm(9,0,390)
+        #second arm
+        self.pwm.set_pwm(5,0,390)
         self.pwm.set_pwm(10,0,390)
-        #11 wrist join
-        self.pwm.set_pwm(11,0,130)
-        #12 claw open/close        
-        self.pwm.set_pwm(12,0,130)
+        #third arm
+        self.pwm.set_pwm(6,0,390)
+        self.pwm.set_pwm(11,0,390)
+        #wrist join
+        #self.pwm.set_pwm(0,0,130)
+        #claw open/close        
+        #self.pwm.set_pwm(1,0,130)
         #set all 
         self.set_basePos(0)
 
