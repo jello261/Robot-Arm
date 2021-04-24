@@ -68,6 +68,38 @@ class RobotArm():
             self.set_xarmOne(xone)
             self.set_xarmTwo(xtwo)
         else:
+            print("You must home the robot first") 
+    def xarmKin(self, input):
+        if self.check():    
+            xone = self.get_xarmOne()
+            xtwo = self.get_xarmTwo()
+            xangle = self.get_xangle()
+
+            angle = int(input)
+            rangle = 180 - angle
+
+            #Thanks Josh for helping calculate the degrees 
+            xMove = int(((26/9) * angle + 130))
+            
+            if xangle < angle:
+                for i in range(xone, xMove):
+                    xtwo -= 1
+                    xone += 1
+                    self.pwm.set_pwm(4,0,xone)
+                    self.pwm.set_pwm(9,0,xtwo)
+                    time.sleep(self.speed)
+            else:
+                for i in range( xMove , xone):
+                    xtwo += 1
+                    xone -= 1
+                    self.pwm.set_pwm(4,0,xone)
+                    self.pwm.set_pwm(9,0,xtwo)
+                    time.sleep(self.speed)
+            
+            self.set_xangle(angle)
+            self.set_xarmOne(xone)
+            self.set_xarmTwo(xtwo)
+        else:
             print("You must home the robot first")
         
     #Second X arm mover 
@@ -103,7 +135,38 @@ class RobotArm():
             self.set_sxarmTwo(xtwo)
         else:
             print("You must home the robot first")
+    def sxarmKin(self, input):
+        if self.check():    
+            xone = self.get_sxarmOne()
+            xtwo = self.get_sxarmTwo()
+            xangle = self.get_sxangle()
 
+            angle = int(input.get())
+            rangle = 180 - angle
+
+            #Thanks Josh for helping calculate the degrees 
+            xMove = int(((26/9) * angle + 130))
+            #FIX 
+            if xangle < angle:
+                for i in range(xone, xMove):
+                    xtwo -= 1
+                    xone += 1
+                    self.pwm.set_pwm(5,0,xone)
+                    self.pwm.set_pwm(10,0,xtwo)
+                    time.sleep(self.speed)
+            else:
+                for i in range( xMove , xone):
+                    xtwo += 1
+                    xone -= 1
+                    self.pwm.set_pwm(5,0,xone)
+                    self.pwm.set_pwm(10,0,xtwo)
+                    time.sleep(self.speed)
+
+            self.set_sxangle(angle)
+            self.set_sxarmOne(xone)
+            self.set_sxarmTwo(xtwo)
+        else:
+            print("You must home the robot first")
     #Third X arm mover
     # FIX
     def txarmMover(self, input):
@@ -139,6 +202,38 @@ class RobotArm():
         else:
             print("You must home the robot first")
 
+    def txarmKin(self, input):
+            if self.check():    
+                xone = self.get_txarmOne()
+                xtwo = self.get_txarmTwo()
+                xangle = self.get_txangle()
+
+                angle = int(input.get())
+                rangle = 180 - angle
+
+                #Thanks Josh for helping calculate the degrees 
+                xMove = int(((26/9) * angle + 130))
+                
+                if xangle < angle:
+                    for i in range(xone, xMove):
+                        xtwo -= 1
+                        xone += 1
+                        self.pwm.set_pwm(6,0,xone)
+                        self.pwm.set_pwm(11,0,xtwo)
+                        time.sleep(self.speed)
+                else:
+                    for i in range( xMove , xone):
+                        xtwo += 1
+                        xone -= 1
+                        self.pwm.set_pwm(6,0,xone)
+                        self.pwm.set_pwm(11,0,xtwo)
+                        time.sleep(self.speed)
+
+                self.set_txangle(angle)
+                self.set_txarmOne(xone)
+                self.set_txarmTwo(xtwo)
+            else:
+                print("You must home the robot first")
 
     def inverseKiematics(self, x, y, phiangle):
         #Length of links in cm
