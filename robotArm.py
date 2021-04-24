@@ -75,7 +75,7 @@ class RobotArm():
             xtwo = self.get_xarmTwo()
             xangle = self.get_xangle()
 
-            angle = int(input)
+            angle = input
             rangle = 180 - angle
 
             #Thanks Josh for helping calculate the degrees 
@@ -141,7 +141,7 @@ class RobotArm():
             xtwo = self.get_sxarmTwo()
             xangle = self.get_sxangle()
 
-            angle = int(input.get())
+            angle = input
             rangle = 180 - angle
 
             #Thanks Josh for helping calculate the degrees 
@@ -201,14 +201,13 @@ class RobotArm():
             self.set_txarmTwo(xtwo)
         else:
             print("You must home the robot first")
-
     def txarmKin(self, input):
             if self.check():    
                 xone = self.get_txarmOne()
                 xtwo = self.get_txarmTwo()
                 xangle = self.get_txangle()
 
-                angle = int(input.get())
+                angle = input
                 rangle = 180 - angle
 
                 #Thanks Josh for helping calculate the degrees 
@@ -264,9 +263,9 @@ class RobotArm():
         if(theta_1 < 0 ):
             theta_1 = theta_1* -1
 
-        self.xarmMover(round(math.degrees(theta_1)))
-        self.sxarmMover(round(math.degrees(theta_2)))
-        self.txarmMover(round(math.degrees(theta_3)))
+        self.xarmKin(round(math.degrees(theta_1)))
+        self.sxarmKin(round(math.degrees(theta_2)))
+        self.txarmKin(round(math.degrees(theta_3)))
         
 
     #homeing method
