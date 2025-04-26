@@ -1,14 +1,16 @@
-# Robot-Arm
-Python Robot Arm
-I wanted to use a Web GUI to control the robot but ran into an error.
-So if you download this please user TKGui.py to control your robot arm.
+## Python Robot Arm
 
-The Python Robot Arm will come with a startup file for the users. This will allow you to start up the program without having to worry about dependencies or other software required to run the program.
-1.	The user will need to download the program from https://github.com/jello261/Robot-Arm 
-2.	Next, open the terminal on the raspberry pi of your choosing. 
-3.	Navigate to the directory where you downloaded the software. 
-4.	Next, run the startup.sh script to download all the depends for the application by running the command   “sudo ./startup.sh”
-5.	Next, run the command “python3 TKGui.py”
-6.	Now you will see a user interface. (see picture below)
-7.	First, you must always home the robot so the software and hardware can be in sync.
-8.	Now you have full control to tell the robot to move in any direction.  
+I aimed to use a web GUI to control the robot arm, but encountered an error. To control your robot arm, please use the `TKGui.py` file.
+
+The Python Robot Arm comes with a startup file to make it easier for users. This allows you to launch the program without worrying about dependencies or additional software needed to run it.
+
+### Instructions:
+
+1. Clone this repository using Git.
+2. Open the terminal on your chosen Raspberry Pi.
+3. Navigate to the directory where you downloaded the software.
+4. Run the `startup.sh` script to download all the dependencies for the application by entering the command: `sudo ./startup.sh`
+5. After that, run the command: `python3 TKGui.py`
+6. You will now see the user interface (refer to the picture below).
+7. Always home the robot first to ensure that the software and hardware are synchronized.
+8. You now have full control to instruct the robot to move in any direction. 
